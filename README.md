@@ -1,5 +1,8 @@
 # Node Exchange Autodiscover
-Retrieve the URL of your EWS by accessing Microsoft's SOAP Autodiscover Service, with optional DNS querying.
+Retrieve the URL of your EWS by accessing Microsoft's SOAP Autodiscover Service.
+
+Differs from other similar packages in that it queries the DNS. It also tries out all the potential
+autodiscover urls in parallel, sacrificing a bit more bandwidth for speed.
 
 ## Usage
 
@@ -37,6 +40,8 @@ autodiscover({ emailAddress: "foobar@yourdomain.com", password: "pass", username
  * @returns {Promise}  Resolves with the EWS url
  */
 autodiscover(params, callback);
-
-
 ```
+
+## License
+
+See [license](LICENSE) (MIT License).
