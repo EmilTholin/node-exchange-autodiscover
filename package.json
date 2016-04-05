@@ -1,6 +1,6 @@
 {
   "name": "exchange-autodiscover",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Access Microsoft's SOAP Autodiscover Service with optional DNS querying",
   "main": "lib",
   "author": "tholle",

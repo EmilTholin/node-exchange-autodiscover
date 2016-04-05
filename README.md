@@ -60,6 +60,7 @@ This will return an object with matched settings. (EWS address will always be in
  * @param   {String}   params.password
  * @param   {String}   [params.username]    - Defaults to emailAddress
  * @param   {Boolean}  [params.queryDns]    - Defaults to true
+ * @param   {String[]} [params.settings]
  * @param   {Function} [cb]
  * @returns {Promise}  Resolves with the EWS url
  */
