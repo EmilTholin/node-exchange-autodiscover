@@ -13,7 +13,7 @@ var autodiscover = require('exchange-autodiscover');
 autodiscover({ emailAddress: "foo@bar.onmicrosoft.com", password: "pass"  })
   .then(console.log.bind(console))  // "https://outlook.microsoft.com/ews/exchange.asmx"
   .catch(console.error.bind(console))
-  
+
 // Callback
 autodiscover({ emailAddress: "foobar@yourdomain.com", password: "pass", username: "ad\\foobar77" },
   function(err, ewsUrl) {
@@ -24,6 +24,30 @@ autodiscover({ emailAddress: "foobar@yourdomain.com", password: "pass", username
     }
   }
 ```
+
+You can optionally request any of the [extra settings found here](https://msdn.microsoft.com/en-us/library/office/dd877068(v=exchg.150).aspx):
+
+```javascript
+// With extra settings
+autodiscover({
+  emailAddress: "foo@bar.onmicrosoft.com",
+  password: "pass",
+  settings: [
+    'EwsSupportedSchemas',
+    'ExternalEwsVersion'
+  ]
+}).then(function (settings) {
+  console.log(settings)
+  // Sample response
+  // {
+  //   EwsSupportedSchemas: 'Exchange2007, Exchange2007_SP1, Exchange2010, Exchange2010_SP1, Exchange2010_SP2, Exchange2013, Exchange2013_SP1, Exchange2015',
+  //   ExternalEwsUrl: 'https://outlook.office365.com/EWS/Exchange.asmx',
+  //   ExternalEwsVersion: '15.00.0000.000'
+  // }
+});
+```
+
+This will return an object with matched settings. (EWS address will always be included by default).
 
 ## API
 
