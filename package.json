@@ -13,7 +13,6 @@
   "repository": "EmilTholin/node-exchange-autodiscover",
   "dependencies": {
     "bluebird": "^3.0.6",
-    "dns": "^0.2.2",
     "request-promise": "^1.0.2",
     "xml2js": "^0.4.15"
   }
